@@ -1,0 +1,44 @@
+{
+  "Tareas": [
+    {
+      "Nombre": "Cocinar",
+      "Desc": "Hervir Huevos",
+      "Completado": false
+    },
+    {
+      "Nombre": "Cocinar",
+      "Desc": "Lentejas",
+      "Completado": false
+    },
+    {
+      "Nombre": "Programar en Go",
+      "Desc": "Aprendiendo Json",
+      "Completado": true
+    },
+    {
+      "Nombre": "Laburar",
+      "Desc": "Yendo a SSC",
+      "Completado": false
+    },
+    {
+      "Nombre": "Teclear",
+      "Desc": "Codigo",
+      "Completado": false
+    },
+    {
+      "Nombre": "Escribir",
+      "Desc": "Con vim",
+      "Completado": true
+    },
+    {
+      "Nombre": "Calcular",
+      "Desc": "Flujo de Dextrosa",
+      "Completado": false
+    },
+    {
+      "Nombre": "Cuidar Perros",
+      "Desc": "Freddy y Rosita",
+      "Completado": false
+    }
+  ]
+}
