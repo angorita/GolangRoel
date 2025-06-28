@@ -2,6 +2,7 @@ package main
 
 import (
 	"GORM/handlers"
+	"GORM/models"
 	"log"
 	"net/http"
 
@@ -9,7 +10,7 @@ import (
 )
 
 func main() {
-	// models.MigrarMaterial()
+	models.MigrarMaterial()
 
 	//rutas o end point mux se asocian a rutas
 	mux := mux.NewRouter()
