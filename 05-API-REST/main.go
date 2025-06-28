@@ -1,7 +1,9 @@
 package main
 
 import (
+	"05-api-rest/db"
 	"05-api-rest/handlers"
+	"05-api-rest/models"
 	"log"
 	"net/http"
 
@@ -12,6 +14,7 @@ func main() {
 	//rutas o end point mux se asocian a rutas
 	mux := mux.NewRouter()
 	//creacion de end point obtener
+	db.CreateTable(models.MaterialSchema, "material")
 	mux.HandleFunc("/api/material/", handlers.GetMateriales).Methods("GET")
 	mux.HandleFunc("/api/material/{id:[0-9]+}", handlers.GetMaterial).Methods("GET")
 	//post

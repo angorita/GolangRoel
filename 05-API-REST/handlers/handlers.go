@@ -36,17 +36,16 @@ func CrearMaterial(rw http.ResponseWriter, r *http.Request) {
 		models.SendUnprocessableEntity(rw)
 	} else {
 		material.Save()
-		models.SendNotFound()
+		models.SendData(rw, material)
 	}
 }
-
 func UpdateMaterial(rw http.ResponseWriter, r *http.Request) {
 	//obtener id
 	var materialId int64
 	if material, err := getUserByRequest(r); err != nil {
 		models.SendNotFound(rw)
 	} else {
-		materialId = material.id
+		materialId = material.Id
 	}
 	material := models.Material{}
 	decoder := json.NewDecoder(r.Body)
@@ -54,11 +53,12 @@ func UpdateMaterial(rw http.ResponseWriter, r *http.Request) {
 		models.SendUnprocessableEntity(rw)
 	} else {
 		material.Id = materialId
+		//le enviamos a save()una estructura ya construida
+		//si tiene id la actualiza sino tiene id crea
 		material.Save()
 		models.SendData(rw, material)
 	}
 }
-
 func DeleteMaterial(rw http.ResponseWriter, r *http.Request) {
 	if material, err := getUserByRequest(r); err != nil {
 		models.SendNotFound(rw)
