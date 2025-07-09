@@ -10,7 +10,7 @@ import (
 // PARA MOSTRAR COMO TRABAJA DEFER DEMORA HASTA QUE SE CIERRA O SI NO HAY ERROR
 // usa recove() en vez de panic, continuando con la ejecucion...
 func main() {
-	file, err := os.Create("hola.txt")
+	file, err := os.Create("txtCreadoPorOAA.txt")
 	if err != nil {
 		fmt.Println(err)
 		return
@@ -18,7 +18,7 @@ func main() {
 
 	defer file.Close()
 
-	_, err = file.Write([]byte("Hola, Oscar Angarita"))
+	_, err = file.Write([]byte("Hola, Oscar Angarita, como andas chaval ?"))
 	if err != nil {
 		fmt.Println(err)
 		return
